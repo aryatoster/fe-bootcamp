@@ -28,6 +28,17 @@
   color: #61dafb;
 }
 
+p {
+  color: white;
+}
+/* div.rank{
+  font-weight: 900;
+  font-size: 36px;
+} */
+p.rowName {
+  font-weight: bold;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
