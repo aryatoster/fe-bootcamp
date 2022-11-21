@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import Trophy from './Trophy'
 
 const Card = (props) => {
-    return <CardBox>
+    return <CardBox width={props.width}>
         <Rank color={props.color}> {props.value} </Rank>
         <CardItem backgroundColor={props.backgroundColor} trophyColor={props.trophyColor} isChamp={props.isChamp}>
             <Trophy></Trophy>
@@ -13,9 +13,9 @@ const Card = (props) => {
     </CardBox>;
   }
 
-const CardBox = styled.div`
-width: 30%;
-`
+const CardBox = styled.div(props => ({
+    width: props.width,
+}))
 
 const Rank = styled.div(props => ({
     fontWeight: "900",
@@ -29,6 +29,7 @@ const CardItem = styled.div(props => ({
     backgroundColor: props.backgroundColor,
     height: props.isChamp? "170px" : "132px",
     textAlign: "left",
+    overflow: "hidden",
     padding: "15px",
     position: "relative",
     display: "flex",
@@ -38,7 +39,7 @@ const CardItem = styled.div(props => ({
     path: {fill: props.trophyColor},
     position: "absolute",
     top: props.isChamp? "10%" : "30%",
-    left: props.isChamp? "77%" : "88.5%",
+    left: props.isChamp? "74%" : "83%",
 }
 
 }))
