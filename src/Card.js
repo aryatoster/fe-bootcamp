@@ -1,14 +1,14 @@
 import styled from '@emotion/styled'
+import Trophy from './Trophy'
 
 const Card = (props) => {
     return <CardBox>
-        <Rank className="rank" color={props.color}> {props.value} </Rank>
-        <CardItem height={props.height} backgroundColor={props.backgroundColor}>
+        <Rank color={props.color}> {props.value} </Rank>
+        <CardItem backgroundColor={props.backgroundColor} trophyColor={props.trophyColor} isChamp={props.isChamp}>
+            <Trophy></Trophy>
             <p className='rowName'> {props.name} </p>
             <p> {props.revenue} revenue won</p>
             <p> {props.deals} deals won</p>
-            <TrophyItem src="Trophy.svg" alt='Trophy' width="60px" height="60px">
-            </TrophyItem>
         </CardItem>
     </CardBox>;
   }
@@ -22,24 +22,25 @@ const Rank = styled.div(props => ({
     fontSize: "36px",
     color: props.color,
     fontStyle: "italic",
+    fontFamily: "roboto",
 }))
 
 const CardItem = styled.div(props => ({
     backgroundColor: props.backgroundColor,
-    height: props.height,
+    height: props.isChamp? "170px" : "132px",
     textAlign: "left",
-    padding: "10px",
-    position: "relative"
+    padding: "15px",
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    svg: {width: props.isChamp? "90px" : "60px",
+    height: props.isChamp? "90px" : "60px",
+    path: {fill: props.trophyColor},
+    position: "absolute",
+    top: props.isChamp? "10%" : "30%",
+    left: props.isChamp? "77%" : "88.5%",
+}
+
 }))
-
-const TrophyItem = styled.img`
-    color: red;
-    position: absolute;
-    left: 27.71%;
-    right: 66.04%;
-    top: 81.81%;
-    bottom: 7.76%;
-`
-
 
   export default Card;
