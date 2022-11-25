@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+p {
+  color: white;
+  margin: unset;
+  flex-grow: 0.15;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+span {
+  text-align: right;
+}
+
+p.rowName {
+  font-weight: 800;
+  flex-grow: 3;
+  font-size: 16px;
+}
