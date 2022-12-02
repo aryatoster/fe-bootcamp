@@ -37,7 +37,7 @@ font-size: 10px;
 `
 interface UserDetails {
   city: string;
-  postal: number;
+  postal: string;
 }
 
 function App() {
@@ -49,7 +49,7 @@ function App() {
         <Title>2022 Snubes Sales Champions </Title>
         <Period>{championshipPerion.startMonth} {championshipPerion.startYear} - {championshipPerion.endMonth} {championshipPerion.endYear} </Period>
       </TitleContainer>
-      <CardContainer className="App">
+      <CardContainer className="App" data-testid='champions'>
         <Card name={salesChampionDataMock[1].name}  city={userInfo?.city} postcode={userInfo?.postal} backgroundColor={"#00afd680"} color={"#00afd680"} trophyColor={"#26AECC"} value={salesChampionDataMock[1].rank} width={"181px"}/>
         <Card name={salesChampionDataMock[0].name} city={userInfo?.city} postcode={userInfo?.postal} backgroundColor={"#295DFA"} color={"#295DFA"} isChamp={true} trophyColor={"#073BD8"} value={salesChampionDataMock[0].rank} width={"237px"}/>
         <Card name={salesChampionDataMock[2].name} city={userInfo?.city} postcode={userInfo?.postal} backgroundColor={"#5132A9"} color={"#5132A9"} trophyColor={"#6E4BD3"} value={salesChampionDataMock[2].rank} width={"176px"}/>

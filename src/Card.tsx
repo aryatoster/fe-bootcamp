@@ -10,7 +10,7 @@ interface CardProps {
     isChamp?: boolean;
     name?: string;
     city?: string;
-    postcode?: number;
+    postcode?: string;
 }
 
 const Rank = styled.div(props => ({
@@ -46,13 +46,13 @@ width: ${(props) => props.width};
 `
 
 const Card = (props: CardProps) => {
-    return <CardBox width={props.width}>
+    return <CardBox width={props.width} data-testid='cardbox'>
         <Rank color={props.color}> {props.value} </Rank>
         <CardItem backgroundColor={props.backgroundColor} trophyColor={props.trophyColor} isChamp={props.isChamp}>
             <Trophy></Trophy>
-            <p className='rowName'> {props.name} </p>
-            <p> {props.city} </p>
-            <p> {props.postcode} </p>
+            <p data-testid='userName' className='rowName'>{props.name}</p>
+            <p data-testid='userCity'> {props.city} </p>
+            <p data-testid='userPostal'> {props.postcode} </p>
         </CardItem>
     </CardBox>;
   }
